@@ -1,0 +1,33 @@
+{
+  "meteor": {
+    "branch": "master"
+  },
+  "packages": {
+    "audio-click": {
+      "git": "https://github.com/awatson1978/audio-click.git"
+    },
+    "fonts-barcode": {
+      "git": "https://github.com/awatson1978/fonts-barcode.git"
+    },
+    "fonts-handwritten": {
+      "git": "https://github.com/awatson1978/fonts-handwritten.git"
+    },
+    "fonts-helveticas": {
+      "git": "https://github.com/awatson1978/fonts-helveticas.git"
+    },
+    "fonts-pictographs": {
+      "git": "https://github.com/awatson1978/fonts-pictographs.git"
+    },
+    "hipaa-audit-log": {
+      "git": "https://github.com/awatson1978/hipaa-audit-log.git"
+    },
+    "reactive-overlays": {
+      "git": "https://github.com/awatson1978/reactive-overlays.git"
+    },
+    "accounts-famous-dead-people": {
+      "git": "https://github.com/awatson1978/accounts-famous-dead-people.git"
+    },
+    "device-detection": {},
+    "cordova-phonegap": {}
+  }
+}

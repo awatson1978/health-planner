@@ -1,0 +1,127 @@
+// Creative Commons License. (c) 2013 pentasyllabic.com
+// Attribution + Noncommercial + NoDerivatives
+// http://creativecommons.org/licenses/by-nc-nd/3.0/
+
+
+
+
+// TODO:  confirm if this @import makes sense here; seems to result in duplicate class definitions
+@import 'syntax.custom.less';
+
+.making-this{
+  position: relative;
+  right: 280px;
+  top: 100px;
+  width: 260px;
+  height: 20px;
+}
+.startHere{
+  position: fixed;
+  right: 40px;
+  top: 80px;
+  font-size: 140%;
+}
+
+#guestPage{
+  //TODO:  determine if it makes sense to move these card defintions over to the main card stylesheet
+  .sidebar-tab{
+    margin-left: 0px !important;
+    margin-top: 3px !important;
+    padding: 6px !important;
+    padding-left: 12px !important;
+    font-size: 110% !important;
+  }
+
+
+  .card-header{
+    background-color: #999999;
+    -webkit-border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    border-top-left-radius: 2px;
+  }
+  .card-body{
+    border-left: 2px solid #999999 !important;
+    border-right: 2px solid #999999 !important;
+    border-top: 2px solid #999999 !important;
+
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+  }
+  .card-footer{
+    height: 5px;
+    border-left: 2px solid #999999 !important;
+    border-right: 2px solid #999999 !important;
+    border-bottom: 2px solid #999999 !important;
+
+    -webkit-border-bottom-right-radius: 5px !important;
+    -moz-border-radius-bottomright: 5px !important;
+    border-bottom-right-radius: 5px !important;
+
+    -webkit-border-bottom-left-radius: 5px !important;
+    -moz-border-radius-bottomleft: 5px !important;
+    border-bottom-left-radius: 5px !important;
+  }
+
+  .card-container:hover{
+    .card-header{
+      background-color: #666666;
+    }
+    .card-body{
+      border-left: 2px solid #666666 !important;
+      border-right: 2px solid #666666 !important;
+      border-top: 2px solid #666666 !important;
+    }
+    .card-footer{
+      border-left: 2px solid #666666 !important;
+      border-right: 2px solid #666666 !important;
+      border-bottom: 2px solid #666666 !important;
+    }
+  }
+
+}
+
+.download-button{
+  .well-behaved;
+  background-color: lavender;
+  color: mediumpurple;
+  font-weight: bold;
+  text-align: center;
+}
+.download-button:hover{
+  .clickable;
+  .unselectable;
+  background-color: lavenderblush;
+  color: mediumpurple;
+}
+//----------------------------------------------------
+
+// landscape orientation
+@media only screen and (min-width: 768px) {
+
+}
+
+// portrait orientation
+@media only screen and (max-width: 768px) {
+  #guestPage{
+    padding-left: 2.5%;
+    .six{
+      width: 95% !important;
+    }
+    .doesnt-overlap-header{
+      padding-top: 0px !important;
+    }
+  }
+  .hidden-on-portrait{
+    .hidden;
+  }
+  #footerActionBar{
+    bottom: 0px;
+  }
+
+}
+@media only screen and (max-width: 480px) {
+}
+
+//----------------------------------------------------
+

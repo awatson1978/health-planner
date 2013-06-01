@@ -1,0 +1,251 @@
+// Creative Commons License. (c) 2013 pentasyllabic.com
+// Attribution + Noncommercial + NoDerivatives
+// http://creativecommons.org/licenses/by-nc-nd/3.0/
+
+
+
+#introTutorial{
+  padding-top:40px;
+  left: 80px !important;
+  position: absolute;
+  font-size: 140%;
+}
+
+
+
+// TODO:  refactor 'item-list' to 'mainWorkqueue'
+#item-list .todo .item-tags {
+  overflow: auto;
+  float: right;
+  margin-right: 40px;
+  margin-top: -7px;
+}
+#item-list .todo {
+  display: block;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+}
+#item-list .todo .display, #item-list .todo .edit {
+    //margin-left: 30px;
+    height: 100%;
+    width: auto;
+    float: left;
+    padding-top: 18px;
+    line-height: 1;
+}
+#item-list .todo:hover .destroy {
+    z-index: 1000;
+}
+#item-list .todo .destroy:hover {
+    z-index: 1000;
+}
+#item-list .todo .item-tags .tag .remove:hover {
+    background-position: -16px center;
+}
+
+
+
+#item-list .todo .check {
+    float: left;
+    width: 25px;
+    margin-top: 0px;
+}
+
+#item-list .todo .todo-text {
+    position: absolute;
+    //float: left;
+    margin-left: -10px;
+    font-size: 110%;
+    top: 18px;
+    overflow: hidden;
+    height: 16px;
+}
+
+
+
+//--------------------------------
+
+.horizontal-tags{
+  position: absolute;
+  top: 8.5px;
+  right: 5px;
+  background-color: white;
+}
+
+.delete-button{
+  background-color: red !important;
+}
+
+//---------------------------------------------
+.send-to-collaborator:hover{
+  color: red;
+}
+
+
+.task-thumbnail{
+  margin-top: -9px;
+  height: 40px;
+  width: 40px;
+  //border: 1px solid lightgray;
+}
+
+
+#workqueuesPage{
+  .todo{
+    padding-left: 20px;
+    .inline-list li{
+      margin-left: 0px;
+    }
+    .display{
+      padding-top: 14px;
+    }
+    .todo-text{
+      margin-left: 0px;
+      padding-left: 10px;
+    }
+    .checkmark:hover{
+      color: coral !important;
+    }
+    .task-star:hover{
+      color: coral !important;
+    }
+    .task-info:hover{
+      color: coral !important;
+    }
+    .task-send:hover{
+      color: coral !important;
+    }
+    .task-delete:hover{
+      color: coral !important;
+    }
+  }
+  .touch-disabled .todo:hover{
+    .checkmark{
+      //color: steelblue;
+      color: dimgray;
+    }
+    .task-star{
+    //color: steelblue;
+      color: dimgray;
+    }
+    .task-info{
+    //color: steelblue;
+      color: dimgray;
+    }
+    .task-send{
+    //color: steelblue;
+      color: dimgray;
+    }
+    .task-delete{
+    //color: steelblue;
+      color: dimgray;
+    }
+    .todo-text{
+    //color: steelblue;
+      color: dimgray;
+    }
+    .horizontal-tags .addtag{
+    //color: steelblue;
+      color: dimgray;
+    }
+  // TOOD:  refactor removable_tag to removable-tag
+    .horizontal-tags .removable_tag{
+      //background-color: steelblue;
+      background-color: dimgray;
+    }
+  }
+}
+
+
+
+//---------------------------------------------
+
+// mobile phone layout
+@media only screen and (max-width: 480px) {
+  #workqueuesPage{
+    #items-view {
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+    .horizontal-tags{
+      visibility:hidden;
+    }
+  }
+}
+
+//portrait orientation
+@media only screen and (max-width: 769px) {
+  #mainLayoutPane{
+    .sidebar-shown-portrait-layout;
+  }
+  #workqueuesPage{
+    #items-view {
+      margin-top: 54px;
+      margin-left: 5px;
+    }
+    .new-task-container{
+      position: fixed;
+      width: 100%;
+      top: 39px;
+      left: 0px;
+      height: 50px;
+      background-color: #666666;
+      padding: 10px;
+      color: gray;
+      z-index: 1000;
+
+      margin-left: 0px;
+      margin-right: 5px;
+      margin-top: 0px;
+      margin-bottom: 5px;
+    }
+    .alert-card .web-link-controls{
+      padding-top: 41px;
+    }
+    .alert-card .detailed-task-card-controls{
+      padding-top: 41px;
+    }
+  }
+
+  #taskDetailCard{
+    position: fixed;
+  }
+  #sidebarPane{
+    padding-top: 90px;
+  }
+
+}
+
+// landscape orientation
+@media only screen and (min-width: 769px) {
+  #mainLayoutPane{
+    .sidebar-shown-landscape-layout;
+  }
+  #workqueuesPage{
+    .new-task-container{
+      margin-left: 20px;
+      margin-right: 15px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+  }
+
+}
+
+//---------------------------------------------
+
+.sidebar-shown-landscape-layout{
+  left: 195px;
+}
+.sidebar-shown-portrait-layout{
+  left:0;
+}
+.sidebar-hidden-landscape-layout{
+  left:0 !important;
+}
+.sidebar-hidden-portrait-layout{
+  left:0 !important;
+}

@@ -1,0 +1,227 @@
+// Creative Commons License. (c) 2013 pentasyllabic.com
+// Attribution + Noncommercial + NoDerivatives
+// http://creativecommons.org/licenses/by-nc-nd/3.0/
+
+
+
+//.drop-zone{
+//  color: gray;
+//  text-align: center;
+//  cursor: pointer;
+//}
+
+//.import_thumbnails {
+//  height: 75px;
+//  border: 1px solid #000;
+//  margin: 10px 5px 0 0;
+//}
+
+#profileItems li{
+  cursor: pointer;
+}
+.profile-items li{
+  width: 100%;
+  float: left;
+}
+.user-card-detailed{
+  position: absolute;
+  padding: 0px;
+  width: 100%;
+  height: 180px;
+  z-index: 1000;
+}
+.card-header{
+  left-pading: 1px;
+  height: 20px;
+  width: 300px;
+  background-color: #666666;
+  color: white;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+.user-card-image{
+  position: absolute;
+  left: 0px !important;
+  height: 100%;
+  border: none;
+  z-index: 1000;
+  padding: 10px;
+  border-right: 1px solid gray;
+  border-bottom: 0px none gray !important;
+}
+.user-card-data{
+  position: absolute;
+  padding-left: 120px;
+  width: 100%;
+  padding-top: 24px;
+}
+.user-card-synopsis{
+  position: absolute;
+  padding-left: 210px;
+  width: 100%;
+}
+.user-card-synopsis-name{
+  padding-top: 10px;
+  font-weight: bold;
+}
+.user-card-block{
+  position: relative;
+  height: 20px;
+}
+.card:hover .user-card-detailed{
+  border: 1px solid darksalmon !important;
+  cursor: pointer;
+}
+.card:hover .card-header{
+  background-color: darksalmon;
+}
+
+.user-card-button{
+  width: 80%;
+  border: 1px solid gray;
+  background-color: lightgray;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.user-card-button:hover{
+  border: 1px solid red;
+}
+
+.user-profile-card{
+  height: 180px;
+}
+//--------------------------------------------
+
+.user-card-detailed-extended{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+.extended-data-block{
+//position: absolute;
+  height: 100%;
+}
+
+.profile-list-label{
+  left: 0px;
+  top: 0px;
+  height: 20px;
+  background-color: #666666;
+  color: white;
+  width: 100%;
+  padding-left: 20px;
+  padding-right:20px;
+  padding-top: 3px;
+}
+.simple-user{
+  position: asbolute;
+  top: 20px;
+}
+
+//.simple-user li{
+//
+//}
+.simple-user li:hover{
+  color: darksalmon;
+  cursor:pointer;
+}
+.simple-user .destroy{
+  margin-right: 40px;
+  font-size: 1.2em;
+}
+
+//.simple-user li{
+//
+//}
+
+
+.profile-social-groups{
+  min-height: 60px;
+}
+
+
+#carewatchCard{
+  top: 240px;
+  position: absolute;
+  width: 100%;
+}
+
+
+.touch-disabled #activeCollaboratorProfileCard:hover{
+  .card-footer{
+    border-bottom: 1px solid darksalmon;
+  }
+  .card-header{
+    background-color: darksalmon;
+  }
+  .card-body{
+    border-left: 1px solid darksalmon;
+    border-right: 1px solid darksalmon;
+    border-top: 1px solid darksalmon;
+  }
+}
+//----------------------------------------------------
+
+
+// mobile phone layout
+@media only screen and (max-width: 480px) {
+  #profilePage{
+    .card-header{
+      width: 480px;
+    }
+    .user-card-detailed-extended{
+      .no-right-padding{
+        left: 0px !important;
+      }
+    }
+    .user-card-data{
+      width: 480px;
+    }
+  }
+}
+
+// portrait orientation
+@media only screen and (max-width: 768px) {
+  #profilePage{
+    .user-card-detailed-extended{
+      top: 240px;
+      .no-right-padding{
+        margin-top: 20px;
+      }
+    }
+    .user-card-data{
+      width: 100%;
+    }
+  }
+}
+
+// landscape orientation
+@media only screen and (min-width: 768px) {
+  #profilePage{
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .user-card-detailed-extended{
+      top: 240px;
+    }
+    .user-card-data{
+      width: 768px;
+    }
+  }
+}
+
+
+
+
+//----------------------------------------------------
+
+.profile-icon{
+  padding-top: 3px;
+}

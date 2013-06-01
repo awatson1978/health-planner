@@ -1,0 +1,113 @@
+// Creative Commons License. (c) 2013 pentasyllabic.com
+// Attribution + Noncommercial + NoDerivatives
+// http://creativecommons.org/licenses/by-nc-nd/3.0/
+
+
+
+.mainLayoutPaneContainer{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 100%;
+}
+#mainLayoutPane {
+    position: absolute;
+    top: -5px;
+    bottom: 0;
+    left: 0px;
+    //overflow: auto;
+    width: 100%;
+}
+
+#sidebarPane {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    width: 200px;
+    overflow: hidden;
+    background: #eee;
+    border-right: 1px solid #999;
+    background: #ddd;
+    padding-top: 48px;
+}
+
+#top-tag-filter, #bottom-pane {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+//------------------------------------------------
+// JSON Panel
+
+.jsondata{
+  z-index: 10000;
+  position: fixed;
+  bottom: 40px;
+  width: 100%;
+}
+
+.alert-card{
+  box-sizing: border-box;
+  z-index: 10000000;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 21px;
+}
+.alert-card .web-link-controls{
+  padding-top: 1px;
+}
+.alert-card .detailed-task-card-controls{
+  padding-top: 1px;
+  padding-right: 0px;
+  visibility: hidden;
+}
+//--------------------------------------------
+// pictograph buttons
+
+
+// mobile phone layout
+@media only screen and (max-width: 480px) {
+  #mainLayoutPane {
+    left: 0px;
+    width: 100%;
+  }
+  #profilePage{
+    width: 480px;
+  }
+}
+
+//portrait orientation
+@media only screen and (max-width: 768px) {
+  #mainLayoutPane {
+    //.sidebar-shown-portrait-layout;
+    left: 0px;
+    padding-top:40px;
+    width: 100%;
+  }
+  #profilePage{
+    width: 100%;
+  }
+  #guestPage{
+    .guestpage-navigation{
+      position: fixed;
+      right: -20px;
+      top: 80px;
+    }
+  }
+}
+
+// landscape orientation
+@media only screen and (min-width: 768px) {
+  #mainLayoutPane {
+    //.sidebar-shown-landscape-layout;
+    left: 195px;
+    width: (100% - 195px);
+  }
+  #profilePage{
+    width: 100%;
+  }
+}

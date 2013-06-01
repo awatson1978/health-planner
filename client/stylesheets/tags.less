@@ -1,0 +1,164 @@
+// Creative Commons License. (c) 2013 pentasyllabic.com
+// Attribution + Noncommercial + NoDerivatives
+// http://creativecommons.org/licenses/by-nc-nd/3.0/
+
+
+
+@lightblue: rgb(194, 209, 219);
+
+.tag {
+    cursor: pointer;
+    float: left;
+    margin: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 80%;
+    /*font-weight: bold;*/
+    background: #999;
+    color: #fff;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+
+    opacity: 1;
+    transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+
+    position: relative;
+}
+.addtag {
+  cursor: pointer;
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 80%;
+  position: relative;
+  color: gray;
+}
+#tag-filter .label {
+    float: left;
+    margin-top: 9px;
+    margin-left: 12px;
+    margin-right: 8px;
+}
+
+#tag-filter .tag {
+    margin-top: 10px;
+    border: 1px solid #777;
+}
+
+#tag-filter .selected {
+    /* background: #69d; */
+    background: @lightblue;
+    color: black;
+}
+
+#tag-filter .count {
+    font-weight: normal;
+    padding-left: 2px;
+}
+
+
+//-------------------------------------
+
+.tag-list{
+  position: absolute;
+  width: 200px;
+}
+
+.sidebar-group li{
+  display: inline;
+}
+.sidebar-tab{
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 3px;
+    padding: 10px;
+    font-size: 80%;
+    /*font-weight: bold;*/
+    background: #666666;
+    color: #fff;
+
+    border: 1px solid #666666;
+
+    -webkit-border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    border-top-left-radius: 2px;
+
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-left-radius: 10px;
+
+    opacity: 1;
+    transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+
+    position: relative;
+    //width: 200%;
+}
+.sidebar-tab:hover{
+  border: 1px solid gray;
+  background-color: gray;
+  cursor: pointer;
+
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  border-top-left-radius: 2px;
+
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.sidebar-tab-accent{
+  position: absolute;
+  margin-left: 5px;
+  margin-top: -10px;
+  float: right;
+  width: 10px;
+  height: 33px;
+  background: #666666;
+  border: 1px solid #666666;
+}
+
+
+
+.sidebar-tile {
+    background: #f2f2f2;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.sidebar-tile:hover{
+    border: 1px solid gray;
+    background-color: @lightblue;
+}
+.sidebar-tile > :first-child { margin-top: 0; }
+.sidebar-tile > :last-child { margin-bottom: 0; }
+.sidebar-tile.callout { background: #2ba6cb; color: #fff; border-color: #2284a1; -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5); -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5); box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5); }
+.sidebar-tile.callout a { color: #fff; }
+.sidebar-tile.callout .button { background: white; border: none; color: #2ba6cb; text-shadow: none; }
+.sidebar-tile.callout .button:hover { background: rgba(255, 255, 255, 0.8); }
+.sidebar-tile.radius { -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; }
+
+.sidebar-tiles{
+    //position: absolute;
+    width: 100%;
+    //padding-left: 5px;
+    //padding-right: 5px;
+    //bottom: 50px;
+}
+//#sidebarPane .columns{
+//    padding: 5px;
+//}
+//-------------------------------------
