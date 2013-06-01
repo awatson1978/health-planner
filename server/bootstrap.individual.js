@@ -9,59 +9,224 @@ Meteor.methods({
         console.log('damn!  initializeDefaultTasks');
 
 
-        var userId = null;
+        var taskId = null;
 
-        // crate our administrator
-        userId = Todos.createUser({
-            username: 'ada',
-            password: 'ada',
-            email: 'ada@test.org',
-            profile: {
-                name: 'Ada Lovelace',
-                role: 'Administrator',
-                avatar: '/avatars/ada.lovelace.jpg'
-            }
+        taskId = Todos.insert({
+            text: 'Get annual flu shot.',
+            timestamp: timestamp,
+            tags: ["annual checkup", "vaccines"],
+            image: "icons/Syringe_and_Vial.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+            });
+        console.log('Task created: ' + taskId);
+
+
+        taskId = Todos.insert({
+            text: 'Register and donate blood.',
+            timestamp: timestamp,
+            tags: ["community", "blood"],
+            image: "icons/Blood_bag.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
         });
-        log_event('Account created: ' + userId, LogLevel.Info, this);
 
-        var data = [
-            {contents: [
-                    ["Get annual flu shot.","annual checkup"],
-                    ["Donate blood.","community"],
-                    ["Make organ donation decision.","community"],
-                    ["Get mammogram.", "cancer screening"],
-                    ["Take hypertension medication once a day.","medication tracking"],
-                    ["Take vitamin supplement once a day.","medication tracking"],
-                    ["Keep below 1500 calories per day.","nutrition"],
-                    ["Replace milk with almond milk.","nutrition"],
-                    ["Increase heart rate by at least 30 minutes today.","exercise"],
-                    ["Yoga stretches for 30 minutes a day.","exercise"],
-                    ["Get eye sight checked.","annual checkup"],
-                    ["Annual dental visit.","annual checkup"],
-                    ["Get blood type checked.","baseline"],
-                    ["Buy genetic testing kit from 23andme. ","baseline", "genetics"],
-                    ["Fill out family history worksheet for diabetes risks.","risk factors"]
-                ]
-            }
-        ];
+        console.log('Task created: ' + taskId);
+        taskId = Todos.insert({
+            text: 'Get blood type checked.',
+            timestamp: timestamp,
+            tags: ["baseline", "blood"],
+            image: "icons/Blood_bag.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
 
-        var timestamp = (new Date()).getTime();
+        taskId = Todos.insert({
+            text: 'Keep below 1500 calories per day.',
+            timestamp: timestamp,
+            tags: ["nutrition"],
+            image: "icons/Medicine_Liquid.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
 
-        for (var i = 0; i < data.length; i++) {
 
-            for (var j = 0; j < data[i].contents.length; j++) {
-                var info = data[i].contents[j];
-                console.log(Todos.insert({
-                    text: info[0],
-                    timestamp: timestamp,
-                    tags: info.slice(1),
-                    owner: Meteor.userId(),
-                    creator: Meteor.userId(),
-                    done: false,
-                    star: false
-                }));
-            }
-        }
+        taskId = Todos.insert({
+            text: 'Annual dental visit.',
+            timestamp: timestamp,
+            tags: ["annual checkup"],
+            image: "icons/Dentistry.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+        taskId = Todos.insert({
+            text: 'Replace milk with almond milk.',
+            timestamp: timestamp,
+            tags: ["nutrition", "allergies"],
+            image: "icons/Medicine_and_Water.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+
+        taskId = Todos.insert({
+            text: 'Make organ donation decision.',
+            timestamp: timestamp,
+            tags: ["community"],
+            image: "icons/Heart_Donor.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+
+        taskId = Todos.insert({
+            text: 'Increase heart rate by at least 30 minutes today.',
+            timestamp: timestamp,
+            tags: ["exercise", "cardio"],
+            image: "icons/Heart.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+
+        taskId = Todos.insert({
+            text: 'Take vitamin supplement once a day.',
+            timestamp: timestamp,
+            tags: ["allergies", "medication tracking"],
+            image: "icons/Allergy_Vials.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+
+        taskId = Todos.insert({
+            text: 'Yoga stretches for 30 minutes a day.',
+            timestamp: timestamp,
+            tags: ["yoga", "cardio"],
+            image: "icons/Pregnant.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+
+
+        taskId = Todos.insert({
+            text: 'Buy genetic testing kit from 23andme.',
+            timestamp: timestamp,
+            tags: ["genetics", "baseline"],
+            image: "icons/DNA.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+        taskId = Todos.insert({
+            text: 'Fill out family history worksheet for diabetes risks.',
+            timestamp: timestamp,
+            tags: ["baseline", "diabetes", "risk factors"],
+            image: "icons/Donar_List.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+
+        taskId = Todos.insert({
+            text: 'Get mammogram screening done.',
+            timestamp: timestamp,
+            tags: ["breast cancer", "radiology", "annual physical"],
+            image: "icons/Xray_Mammography.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+
+
+        taskId = Todos.insert({
+            text: 'Take hypertension medication once a day.',
+            timestamp: timestamp,
+            tags: ["hypertension", "medication tracking"],
+            image: "icons/Allergy_Vials.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+        taskId = Todos.insert({
+            text: 'Take vitamin supplement once a day.',
+            timestamp: timestamp,
+            tags: ["medication tracking", "nutrition"],
+            image: "icons/Allergy_Vials.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+        taskId = Todos.insert({
+            text: 'Get eye sight checked.',
+            timestamp: timestamp,
+            tags: ["annual checkup", "baseline"],
+            image: "icons/Eye_Chart.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+        taskId = Todos.insert({
+            text: 'Get blood type checked.',
+            timestamp: timestamp,
+            tags: ["blood"],
+            image: "icons/Transfusion.png",
+            owner: Meteor.userId(),
+            creator: Meteor.userId(),
+            done: false,
+            star: false
+        });
+        console.log('Task created: ' + taskId);
+
+
     }
 });
 
