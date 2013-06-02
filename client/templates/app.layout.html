@@ -29,14 +29,7 @@ http://creativecommons.org/licenses/by-nc-nd/3.0/
             {{else}}
             <div id="singlePane">
                 {{#if isFirstVisit }}
-                <div id="introTutorial" class="harabarahand">
-                    <span class="largish">Welcome to Clinical Workqueues</span>
-                    <hr>
-                    <p>- Tap on All Tasks to get started.</p>
-                    <p>- Your profile is selected in the upper right hand corner with the person icon.</p>
-                    <p>- You can reinitialize your default tasks in your user profile.</p>
-                    <p>- Your profile is also where you can select a collaborator.</p>
-                </div>
+                    {{> introTutorialTemplate}}
                 {{else}}
                     {{> workqueuesPageTemplate }}
                     {{> workqueuesPageTutorialTemplate }}
@@ -56,6 +49,28 @@ http://creativecommons.org/licenses/by-nc-nd/3.0/
     </div>
     {{> reactiveOverlaysTemplate }}
     <div class="hidden resize-trigger">resized: {{resized}}</div>
+</template>
+
+<template name="introTutorialTemplate">
+    <div id="introTutorial" class="helveticas">
+        <span class="largish">Welcome to Senescence Health Planner</span>
+        <hr>
+        <p>- Tap on All Tasks to get started.</p>
+        <p>- Your profile is selected in the upper right hand corner with the person icon.</p>
+        <p>- You can reinitialize your default tasks in your user profile.</p>
+        <p>- Your profile is also where you can select a collaborator.</p>
+        <hr>
+        {{#if hasNoTasks }}
+        <p>It doesn't look like you have any tasks.  Click below to initialize some.</p>
+        <p><div class="fullwidth initialize-tasks-button button">Initialize Tasks</div></p>
+        {{else}}
+
+
+        {{/if}}
+
+
+
+    </div>
 </template>
 
 

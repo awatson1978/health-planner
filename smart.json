@@ -28,6 +28,7 @@
       "git": "https://github.com/awatson1978/accounts-famous-dead-people.git"
     },
     "device-detection": {},
-    "cordova-phonegap": {}
+    "cordova-phonegap": {},
+    "keybindings": {}
   }
 }

@@ -302,8 +302,15 @@ Template.taskItemTemplate.editing = function () {
 };
 Template.taskItemTemplate.task_thumbnail = function(){
     try{
-        console.log(this.image);
-        return this.image;
+        if(this.image == null){
+            return "icons/Transparent.png";
+        }else{
+            if(this.done){
+                return "iconsbw/" + this.image;
+            }else{
+                return "icons/" + this.image
+            }
+        }
     }catch(error){
         console.log(error);
     }
@@ -440,7 +447,8 @@ sendToActiveCollaborator = function() {
             Meteor.users.update(Meteor.user().profile.activeCollaborator, {$set:{ 'profile.dropbox':Session.get('selected_task_id')}});
             //TODO:  log_hipaa_event() on callback
 
-            log_hipaa_event("Sent task " + Session.get('selected_task_id') + " to " + Meteor.users.findOne(Meteor.user().profile.activeCollaborator).profile.name + " (" + Meteor.user().profile.activeCollaborator + " ).", LogLevel.Hipaa, Meteor.user()._id);
+            //log_hipaa_event(Meteor.user().profile.name + " (" + Meteor.user()._id + ") sent task " + Todos.findOne(Session.get('selected_task_id')).text + " (" + Session.get('selected_task_id') + ") to " + Meteor.users.findOne(Meteor.user().profile.activeCollaborator).profile.name + " (" + Meteor.user().profile.activeCollaborator + " ).", LogLevel.Hipaa, Meteor.user()._id);
+            log_hipaa_event(Meteor.user().profile.name + " sent task `" + Todos.findOne(Session.get('selected_task_id')).text + "` to " + Meteor.users.findOne(Meteor.user().profile.activeCollaborator).profile.name + ".", LogLevel.Hipaa, Meteor.user()._id);
 
         } else {
             console.log('Meteor profile not available.');
@@ -655,7 +663,7 @@ Template.taskDetailCardTemplate.activeCollaboratorName = function(){
 Template.taskDetailCardTemplate.todo_image = function(){
     try{
         if(Todos.findOne(Session.get('selected_task_id')).image){
-            return Todos.findOne(Session.get('selected_task_id')).image;
+            return "icons/" + Todos.findOne(Session.get('selected_task_id')).image;
         }else{
             return '/images/click-to-select-task-image.jpg';
         }
@@ -681,3 +689,45 @@ Template.taskDetailCardTemplate.adding_tag = function(){
 };
 
 
+
+
+
+
+
+//-------------------------------------------------------------------------
+// Add the 'selected-font' class to the sort buttons
+
+Template.workqueuesSortingTemplate.sortCompletedSelected = function(){
+    try{
+        if(Session.get('sort_workqueues_completed')){
+            return 'selected-font';
+        }else{
+            return '';
+        }
+
+    }catch(err){
+        console.log(err);
+    }
+};
+Template.workqueuesSortingTemplate.sortStarredSelected = function(){
+    try{
+        if(Session.get('sort_workqueues_starred')){
+            return 'selected-font';
+        }else{
+            return '';
+        }
+    }catch(err){
+        console.log(err);
+    }
+};
+Template.workqueuesSortingTemplate.sortAlphabeticallySelected = function(){
+    try{
+        if(Session.get('sort_workqueues_alphabetically')){
+            return 'selected-font';
+        }else{
+            return '';
+        }
+    }catch(err){
+        console.log(err);
+    }
+};

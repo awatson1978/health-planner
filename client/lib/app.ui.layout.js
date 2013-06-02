@@ -186,8 +186,8 @@ Template.dropboxAlertTemplate.alert_image = function(){
         console.log('getting dropbox alert image...');
         //console.log('selected_task_id: ' + Session.get('selected_task_id'));
         if(Meteor.user().profile.dropbox){
-            console.log(JSON.stringify(Todos.findOne(Meteor.user().profile.dropbox).image));
-            return Todos.findOne(Meteor.user().profile.dropbox).image;
+            //console.log(JSON.stringify(Todos.findOne(Meteor.user().profile.dropbox).image));
+            return "/icons/" + Todos.findOne(Meteor.user().profile.dropbox).image;
         }else{
             return '/images/placeholder-240x240.jpg';
         }
@@ -226,5 +226,27 @@ Template.dropboxAlertTemplate.alert_link = function(){
         }
     }catch(error){
         console.log(error);
+    }
+};
+
+
+
+
+//--------------------------------------------------------
+
+Template.introTutorialTemplate.events({
+    'click .initialize-tasks-button': function(){
+        console.log('lets initialize some tasks...');
+        Meteor.call('initializeDefaultTasks', function(){
+            console.log('tasks should be initilazed now...');
+        });
+    }
+});
+Template.introTutorialTemplate.hasNoTasks = function(){
+    console.log('hasNoTasks: ' + Todos.find(Meteor.userId()).count());
+    if(Todos.find({owner: Meteor.userId()}).count() == 0){
+        return true;
+    }else{
+        return false;
     }
 };

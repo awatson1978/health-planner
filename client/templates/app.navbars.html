@@ -1,0 +1,42 @@
+
+<template name="headerBarTemplate">
+    <div data-role="header" data-theme="none" class="header-nav-bar">
+        <ul class="nav-bar header-nav-bar">
+            <li class="pentasyllabicLogoListItem">
+                <img onclick='toggleSidebarVisibility();' class="pentasyllabicLogo" src="/images/pentasyllabic.logo.square.transparent.png">
+            </li>
+            <li><a id="appTitle" onclick='showHomePage();' href="#">senescence.pentasyllabic.com</a></li>
+        </ul>
+        <ul class="nav-bar header-nav-bar-right">
+            {{#if currentUser }}
+            <li><a href="#" onclick='showPage("#profilePage"); Session.set("json_content", JSON.stringify(Meteor.user()));'><span class="largish profile-icon pictograph">k  </span></a></li>
+            {{/if}}
+            <li><a href="#">{{loginButtons align="right"}}</a></li>
+        </ul>
+    </div>
+</template>
+
+
+<template name="footerBarTemplate">
+    {{> jsonContentPanelTemplate }}
+    <div id="footerActionBar" data-role="footer" data-theme="none" class="nav-bar bottom-anchor">
+        {{#if currentUser }}
+        <ul class="nav-bar footer-nav-bar">
+            <!--<li><a href="#" onclick='showPage("#workqueuesPage");'><span class="pictographs">4  </span>Workqueues</a></li>-->
+
+            <!-- //TODO:  trigger workqueuesSortFooterTemplate to only display on workqueuesPage -->
+            {{> workqueuesSortingTemplate }}
+        </ul>
+        <ul class="nav-bar footer-nav-bar-right">
+            {{#if showWebBrowser }}
+            <li class="webviewer"><a href="#" onclick=''><span class="largish pictograph">W</span></a></li>
+            {{/if}}
+            <li class="tutorial"><a href="#" onclick=''><span class="largish pictograph">?</span></a></li>
+            <!-- //TODO:  add mobileDeviceStatus icons to listening/connected -->
+            <li>{{> mobileDeviceStatus }}</li>
+        </ul>
+        {{/if}}
+    </div>
+</template>
+
+

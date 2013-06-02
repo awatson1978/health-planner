@@ -39,7 +39,8 @@
         "branch": "master"
       },
       "device-detection": {},
-      "cordova-phonegap": {}
+      "cordova-phonegap": {},
+      "keybindings": {}
     },
     "packages": {
       "audio-click": {
@@ -91,6 +92,11 @@
         "git": "https://github.com/awatson1978/cordova-phonegap.git",
         "tag": "v0.1.0",
         "commit": "bbac4935203e9b6ee10f95338087fca57673cfbd"
+      },
+      "keybindings": {
+        "git": "https://github.com/matteodem/meteor-keybindings.git",
+        "tag": "v0.3.8",
+        "commit": "7102c7329453c18c63846d74d0b51ef35a23e945"
       }
     }
   }

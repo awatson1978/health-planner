@@ -48,6 +48,8 @@ Session.set('is_modal_dialog', false);
 
 
 
+Session.set('sort_workqueues_alphabetically', true);
+
 // first we check that the browser is supported and whether it's worth even trying to render
 //if(isWebKit){
 //    Session.set('is_supported_browser', true);
@@ -74,6 +76,15 @@ $(window).resize(function(evt) {
 // this only runs when the server is started up
 Meteor.startup(function () {
     Backbone.history.start({pushState: true});
+
+
+    Meteor.Keybindings.add({
+        'esc' : function () {
+            Todos.remove(Session.get('selected_task_id'));
+            Session.set('show_task_detail_panel', false);
+        }
+    });
+
 });
 
 // warning:  generally speaking, app_container.rendered isn't the correct place to add page specific rendering code
@@ -118,93 +129,11 @@ Template.appContainerTemplate.loggedIn = function () {
 };
 
 
-
-Template.footerBarTemplate.events({
-    'click .sort-completed': function(){
-        if(Session.get('sort_workqueues_completed')){
-            Session.set('sort_workqueues_completed', false);
-            Session.set('sort_workqueues_starred', false);
-            Session.set('sort_workqueues_alphabetically', false);
-        }else{
-            Session.set('sort_workqueues_completed', true);
-            Session.set('sort_workqueues_starred', false);
-            Session.set('sort_workqueues_alphabetically', false);
-        }
-        Meteor.flush();
-    },
-    'click .sort-starred': function(){
-        if(Session.get('sort_workqueues_starred')){
-            Session.set('sort_workqueues_completed', false);
-            Session.set('sort_workqueues_starred', false);
-            Session.set('sort_workqueues_alphabetically', false);
-        }else{
-            Session.set('sort_workqueues_completed', false);
-            Session.set('sort_workqueues_starred', true);
-            Session.set('sort_workqueues_alphabetically', false);
-        }
-        Meteor.flush();
-    },
-    'click .sort-alphabetical': function(){
-        if(Session.get('sort_workqueues_alphabetically')){
-            Session.set('sort_workqueues_completed', false);
-            Session.set('sort_workqueues_starred', false);
-            Session.set('sort_workqueues_alphabetically', false);
-        }else{
-            Session.set('sort_workqueues_completed', false);
-            Session.set('sort_workqueues_starred', false);
-            Session.set('sort_workqueues_alphabetically', true);
-        }
-        Meteor.flush();
-    },
-    'click .tutorial': function(){
-        //this just sets a mask over the entire application; useful for testing, but not much else
-        //Session.set('show_reactive_overlay', true);
-        showTutorialOverlay('#workqueuesPageTutorial');
-    },
-    'click .webviewer': function(){
-        toggleSession('is_dual_panel_layout');
-        //showPage('#webBrowserPage');
-    }
-});
-
-
 //-------------------------------------------------------------------------
-// Add the 'selected-font' class to the sort buttons
+// we love keybindings!  :)
 
-Template.workqueuesSortingTemplate.sortCompletedSelected = function(){
-    try{
-        if(Session.get('sort_workqueues_completed')){
-            return 'selected-font';
-        }else{
-            return '';
-        }
 
-    }catch(err){
-        console.log(err);
-    }
-};
-Template.workqueuesSortingTemplate.sortStarredSelected = function(){
-    try{
-        if(Session.get('sort_workqueues_starred')){
-            return 'selected-font';
-        }else{
-            return '';
-        }
-    }catch(err){
-        console.log(err);
-    }
-};
-Template.workqueuesSortingTemplate.sortAlphabeticallySelected = function(){
-    try{
-        if(Session.get('sort_workqueues_alphabetically')){
-            return 'selected-font';
-        }else{
-            return '';
-        }
-    }catch(err){
-        console.log(err);
-    }
-};
+
 
 
 //-------------------------------------------------------------------------

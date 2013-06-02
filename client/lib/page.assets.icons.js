@@ -24,6 +24,6 @@ Template.iconAssetsPageTemplate.events({
 });
 
 Template.iconAssetTemplate.icon_image = function () {
-    return this.image;
+    return "icons/" + this.image;
 };
 

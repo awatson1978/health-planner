@@ -369,6 +369,9 @@ Template.profilePageSidebarTemplate.events({
         Meteor.call('initializeDefaultTasks', function(){
             console.log('tasks should be initilazed now...');
         });
+    },
+    'click .remove-collaborator-tab': function(){
+        Meteor.users.update(Meteor.userId(), {$unset:{ 'profile.activeCollaborator':'' }});
     }
 });
 Template.profilePageSidebarTemplate.json_inspector_selected = function(){

@@ -8,14 +8,14 @@ Meteor.methods({
     initializeDefaultTasks: function (options) {
         console.log('damn!  initializeDefaultTasks');
 
-
+        var timestamp = (new Date()).getTime();
         var taskId = null;
 
         taskId = Todos.insert({
             text: 'Get annual flu shot.',
             timestamp: timestamp,
             tags: ["annual checkup", "vaccines"],
-            image: "icons/Syringe_and_Vial.png",
+            image: "Syringe_and_Vial.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -28,31 +28,20 @@ Meteor.methods({
             text: 'Register and donate blood.',
             timestamp: timestamp,
             tags: ["community", "blood"],
-            image: "icons/Blood_bag.png",
+            image: "Blood_bag.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
             star: false
         });
+        console.log('Task created: ' + taskId);
 
-        console.log('Task created: ' + taskId);
-        taskId = Todos.insert({
-            text: 'Get blood type checked.',
-            timestamp: timestamp,
-            tags: ["baseline", "blood"],
-            image: "icons/Blood_bag.png",
-            owner: Meteor.userId(),
-            creator: Meteor.userId(),
-            done: false,
-            star: false
-        });
-        console.log('Task created: ' + taskId);
 
         taskId = Todos.insert({
             text: 'Keep below 1500 calories per day.',
             timestamp: timestamp,
             tags: ["nutrition"],
-            image: "icons/Medicine_Liquid.png",
+            image: "Medicine_Liquid.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -65,7 +54,7 @@ Meteor.methods({
             text: 'Annual dental visit.',
             timestamp: timestamp,
             tags: ["annual checkup"],
-            image: "icons/Dentistry.png",
+            image: "Dentistry.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -77,7 +66,7 @@ Meteor.methods({
             text: 'Replace milk with almond milk.',
             timestamp: timestamp,
             tags: ["nutrition", "allergies"],
-            image: "icons/Medicine_and_Water.png",
+            image: "Medicine_and_Water.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -90,7 +79,7 @@ Meteor.methods({
             text: 'Make organ donation decision.',
             timestamp: timestamp,
             tags: ["community"],
-            image: "icons/Heart_Donor.png",
+            image: "Heart_Donor.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -103,7 +92,7 @@ Meteor.methods({
             text: 'Increase heart rate by at least 30 minutes today.',
             timestamp: timestamp,
             tags: ["exercise", "cardio"],
-            image: "icons/Heart.png",
+            image: "Heart.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -116,7 +105,7 @@ Meteor.methods({
             text: 'Take vitamin supplement once a day.',
             timestamp: timestamp,
             tags: ["allergies", "medication tracking"],
-            image: "icons/Allergy_Vials.png",
+            image: "Allergy_Vials.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -129,7 +118,7 @@ Meteor.methods({
             text: 'Yoga stretches for 30 minutes a day.',
             timestamp: timestamp,
             tags: ["yoga", "cardio"],
-            image: "icons/Pregnant.png",
+            image: "Pregnant.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -143,7 +132,7 @@ Meteor.methods({
             text: 'Buy genetic testing kit from 23andme.',
             timestamp: timestamp,
             tags: ["genetics", "baseline"],
-            image: "icons/DNA.png",
+            image: "DNA.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -155,7 +144,7 @@ Meteor.methods({
             text: 'Fill out family history worksheet for diabetes risks.',
             timestamp: timestamp,
             tags: ["baseline", "diabetes", "risk factors"],
-            image: "icons/Donar_List.png",
+            image: "Donar_List.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -168,7 +157,7 @@ Meteor.methods({
             text: 'Get mammogram screening done.',
             timestamp: timestamp,
             tags: ["breast cancer", "radiology", "annual physical"],
-            image: "icons/Xray_Mammography.png",
+            image: "Xray_Mamography.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -182,7 +171,7 @@ Meteor.methods({
             text: 'Take hypertension medication once a day.',
             timestamp: timestamp,
             tags: ["hypertension", "medication tracking"],
-            image: "icons/Allergy_Vials.png",
+            image: "Allergy_Vials.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -194,7 +183,7 @@ Meteor.methods({
             text: 'Take vitamin supplement once a day.',
             timestamp: timestamp,
             tags: ["medication tracking", "nutrition"],
-            image: "icons/Allergy_Vials.png",
+            image: "Allergy_Vials.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -206,7 +195,7 @@ Meteor.methods({
             text: 'Get eye sight checked.',
             timestamp: timestamp,
             tags: ["annual checkup", "baseline"],
-            image: "icons/Eye_Chart.png",
+            image: "Eye_Chart.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
@@ -218,7 +207,7 @@ Meteor.methods({
             text: 'Get blood type checked.',
             timestamp: timestamp,
             tags: ["blood"],
-            image: "icons/Transfusion.png",
+            image: "Transfusion.png",
             owner: Meteor.userId(),
             creator: Meteor.userId(),
             done: false,
