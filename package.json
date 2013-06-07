@@ -1,6 +1,6 @@
 {
-  "name": "clinical-workqueues",
-  "description": "clinical-workqueues - automatically converted by Demeteorizer. https://github.com/onmodulus/demeteorizer",
+  "name": "senescence",
+  "description": "senescence - automatically converted by Demeteorizer. https://github.com/onmodulus/demeteorizer",
   "version": "0.0.1",
   "main": "main.js",
   "dependencies": {

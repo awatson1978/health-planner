@@ -16,7 +16,6 @@ http://creativecommons.org/licenses/by-nc-nd/3.0/
             {{#if isDualPanelLayout }}
             <div id="panelLeft" class="six columns">
                 {{> workqueuesPageTemplate }}
-                {{> workqueuesPageTutorialTemplate }}
                 {{> profilePageTemplate }}
                 {{> communityPageTemplate }}
                 {{> iconAssetsPageTemplate }}
@@ -32,7 +31,6 @@ http://creativecommons.org/licenses/by-nc-nd/3.0/
                     {{> introTutorialTemplate}}
                 {{else}}
                     {{> workqueuesPageTemplate }}
-                    {{> workqueuesPageTutorialTemplate }}
                     {{> profilePageTemplate }}
                     {{> communityPageTemplate }}
                     {{> iconAssetsPageTemplate }}
@@ -41,6 +39,7 @@ http://creativecommons.org/licenses/by-nc-nd/3.0/
                 {{/if}}
             </div>
             {{/if }}
+            {{> workqueuesPageTutorialTemplate }}
         </div>
         {{> sidebarTemplate }}
         {{else }}

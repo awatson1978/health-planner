@@ -55,3 +55,8 @@ Template.footerBarTemplate.showWebBrowser = function(){
         return false;
     }
 };
+
+//Template.reactiveOverlaysTemplate.templateHtml = function(){
+//    return $(Session.get('overlay_template_reference_id'));
+//};
+//
