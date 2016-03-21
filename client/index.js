@@ -75,15 +75,15 @@ $(window).resize(function(evt) {
 // we make sure that navigation history is enabled
 // this only runs when the server is started up
 Meteor.startup(function () {
-    Backbone.history.start({pushState: true});
+    //Backbone.history.start({pushState: true});
 
 
-    Meteor.Keybindings.add({
-        'esc' : function () {
-            Todos.remove(Session.get('selected_task_id'));
-            Session.set('show_task_detail_panel', false);
-        }
-    });
+    // Keybindings.add({
+    //     'esc' : function () {
+    //         Todos.remove(Session.get('selected_task_id'));
+    //         Session.set('show_task_detail_panel', false);
+    //     }
+    // });
 
 });
 
@@ -138,4 +138,4 @@ Template.appContainerTemplate.loggedIn = function () {
 
 //-------------------------------------------------------------------------
 // initialize cordova phonegap and mobile hardware support
-app.initialize(window);
+// app.initialize(window);

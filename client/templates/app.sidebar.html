@@ -7,7 +7,7 @@ http://creativecommons.org/licenses/by-nc-nd/3.0/
 
 <template name="sidebarTemplate">
     {{#if sidebarIsVisible }}
-    <div class="doesnt-overlap-header fixed-layout hide-for-small helveticas" id="sidebarPane">
+      <div class="doesnt-overlap-header fixed-layout hide-for-small helveticas" id="sidebarPane">
 
         {{#if isWorkqueuesPage }}
         {{> listsTemplate}}
@@ -22,74 +22,64 @@ http://creativecommons.org/licenses/by-nc-nd/3.0/
         {{> communityPageSidebarTemplate}}
         {{/if}}
 
-    </div>
+      </div>
     {{/if}}
 </template>
 
 
 <!-- //TODO:  rename listsTemplate to something else? -->
 <template name="listsTemplate">
-    <div id="listsTemplate" class="list-tab-container">
+  <div id="listsTemplate" class="list-tab-container">
 
     <div class="all-tasks-tab sidebar-tab note">
-        <div class="display">
-            All Tasks
-        </div>
+      <div class="display">
+          All Tasks
+      </div>
     </div>
 
     <div class="finished-tasks-tab sidebar-tab note">
-        <div class="display">
-            Finished
-        </div>
+      <div class="display">
+          Finished
+      </div>
     </div>
     <div class="unfinished-tasks-tab sidebar-tab note">
-        <div class="display">
-            Unfinished
-        </div>
+      <div class="display">
+          Unfinished
+      </div>
     </div>
 
     <div class="urgent-tasks-tab sidebar-tab note">
-        <div class="display">
-            Urgent Tasks
-        </div>
+      <div class="display">
+          Urgent Tasks
+      </div>
     </div>
     <div class="routine-tasks-tab sidebar-tab note">
-        <div class="display">
-            Routine Tasks
-        </div>
+      <div class="display">
+          Routine Tasks
+      </div>
     </div>
 
-
-        <!--<div class="today-tasks-tab sidebar-tab note">-->
-        <!--<div class="display">-->
-            <!--Today-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="inbox-tasks-tab sidebar-tab note">-->
-        <!--<div class="display">-->
-            <!--Inbox-->
-        <!--</div>-->
-    <!--</div>-->
-
-
+  </div>
 </template>
 
 
 
 <template name="workqueuesPageSidebarTemplate">
-    {{> tagFilterTemplate}}
+  {{> tagFilterTemplate}}
 </template>
+
+
 <template name="tagFilterTemplate">
-    <div id="tagTiles">
-        <hr class="gray-line">
-        <div id="tag-filter" class="tag-list">
-            {{#each tags}}
-            <div class="sidebar-tab {{selected}}">
-                {{tag_text}} <span class="count">({{count}})</span>
-            </div>
-            {{/each}}
-        </div>
+  <div id="tagTiles">
+    <hr class="gray-line">
+    <div id="tag-filter" class="tag-list">
+      {{#each tags}}
+      <div class="sidebar-tab {{selected}}">
+          {{tag_text}} <span class="count">({{count}})</span>
+      </div>
+      {{/each}}
     </div>
+  </div>
 </template>
 
 

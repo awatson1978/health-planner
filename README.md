@@ -1,7 +1,7 @@
-clinical-workqueues
+health-planner
 ===================
 
-clinical workqueues inspired by the day of glass concept video
+health-planner inspired by the day of glass concept video
 
 ------------------------
 ### License
@@ -9,7 +9,7 @@ clinical workqueues inspired by the day of glass concept video
 NOTICE:  THIS IS NOT FREE SOFTWARE AND HAS RESTRICTIONS
 
 A)  This application contains restricted media, including icons and fonts, which require purchasing a license for use.  Specifically, the Vista Medical Icons require licensure before you can legally fork the repository and launch a public site using this code.
- 
+
   Vista Medical Icons  
   http://www.professional-icons.com/icon-sets/vista-medical-icons.aspx  
   https://www.professional-icons.com/legal/stock-license.aspx
@@ -25,7 +25,7 @@ B)  In the meantime, the code itself is temporarily available as open-source via
   Creative Commons License. (c) 2013 pentasyllabic.com  
   Attribution + Noncommercial + NoDerivatives  
   http://creativecommons.org/licenses/by-nc-nd/3.0/  
-  
+
 
 D)  Portions of the application are already available under the MIT license:
 
@@ -37,8 +37,3 @@ D)  Portions of the application are already available under the MIT license:
 
 
 E)  Lastly, besides the licensing issues with icons and fonts, there are some issues surrounding HIPAA Compliancy that need to be addressed before going into production with this software.  (This is one of the reasons for the limitation to the Artistic License, rather than the Creative Commons or MIT license, as their are compliancy issues related to meeting HIPAA requirements and gaining FDA and CCHIT regulatory approval that require carving out a Standard Version.)  Contact me directly if you have any questions about licensing it for use in commercial or clinical environments, and we can discuss working through those issues.  
-
-
-
-
-

@@ -11,7 +11,7 @@
             {{#if currentUser }}
             <li><a href="#" onclick='showPage("#profilePage"); Session.set("json_content", JSON.stringify(Meteor.user()));'><span class="largish profile-icon pictograph">k  </span></a></li>
             {{/if}}
-            <li><a href="#">{{loginButtons align="right"}}</a></li>
+            <li><a href="#">{{> loginButtons align="right"}}</a></li>
         </ul>
     </div>
 </template>
@@ -38,5 +38,3 @@
         {{/if}}
     </div>
 </template>
-
-

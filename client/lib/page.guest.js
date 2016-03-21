@@ -3,9 +3,7 @@
 // http://creativecommons.org/licenses/by-nc-nd/3.0/
 
 
-Template.guestPageTemplate.rendered = function(){
-    log_event("Template.guestPageTemplate.rendered",LogLevel.Signpost,this);
-};
+
 Template.guestPageTemplate.events({
     'click .synopsis-tab': function(){
         $('.card-container').addClass('hidden');
@@ -16,16 +14,6 @@ Template.guestPageTemplate.events({
         $('.card-container').addClass('hidden');
         $('.features').removeClass('hidden');
     },
-//    'click .vision-tab': function(){
-//        $('.card-container').addClass('hidden');
-//        $('.vision').removeClass('hidden');
-//        $('#currentScreenshotContainer').addClass('hidden');
-//    },
-//    'click .roadmap-tab': function(){
-//        $('.card-container').addClass('hidden');
-//        $('.vision').addClass('hidden');
-//        $('.roadmap').removeClass('hidden');
-//    },
     'click .eula-tab': function(){
         $('.card-container').addClass('hidden');
         $('.eula').removeClass('hidden');
@@ -46,12 +34,4 @@ Template.guestPageTemplate.events({
     'click .all-tab': function(){
         $('.card-container').removeClass('hidden');
     }
-//    ,
-//    'click .moneyShot': function(){
-//        showImageOverlay('#day-of-glass-money-shot-34ratio');
-//    },
-//    'click #currentScreenshot': function(){
-//        showImageOverlay('#currentScreenshotImage');
-//    }
 });
-

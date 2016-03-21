@@ -2,44 +2,50 @@
 Meteor.startup(function () {
   if (Lists.find().count() === 0) {
     var data = [
-      {name: "Inbox",
-       contents: [
-                 ["Provide smoking cessation education.","nutrition"],
-                ["Evaluate patient history for symptoms of hypertension.","nutrition"],
-           ["Rule out tachacardia arhythmia as cause of fainting.","nutrition"],
-           ["Review patient eating habits.  Discuss blood sugar level monitoring.","nutrition"],
-           ["Prescribe anti-nausea medication for motion sickness.","nutrition"]
+      {
+        name: "Inbox",
+        contents: [
+                 ["Provide smoking cessation education.", "nutrition"],
+                ["Evaluate patient history for symptoms of hypertension.", "nutrition"],
+           ["Rule out tachacardia arhythmia as cause of fainting.", "nutrition"],
+           ["Review patient eating habits.  Discuss blood sugar level monitoring.", "nutrition"],
+           ["Prescribe anti-nausea medication for motion sickness.", "nutrition"]
        ]
       },
-      {name: "Emergency",
-       contents: [
+      {
+        name: "Emergency",
+        contents: [
          ["Reconcile tamoxifen side effects with current medications.", "medications"],
          ["Evaluate risk of pulmonary embolism.", "medications", "risk evaluation"]
          ]
       },
-      {name: "Completed",
-            contents: [
-                ["Double check insurance eligibility before end of month.", "insurance", "medications"],
-                ["Contact technetium-99m supplier for shortage routing instructions.", "protocols", "medications", "supply chain"]
+      {
+        name: "Completed",
+        contents: [
+                ["Double check insurance eligibility before end of month.", "insurance",
+            "medications"],
+                ["Contact technetium-99m supplier for shortage routing instructions.", "protocols",
+            "medications", "supply chain"]
             ]
       },
-      {name: "Routine",
-       contents: [
-           ["Get annual flu shot.","annual checkup"],
-           ["Donate blood.","community"],
-           ["Make organ donation decision.","community"],
+      {
+        name: "Routine",
+        contents: [
+           ["Get annual flu shot.", "annual checkup"],
+           ["Donate blood.", "community"],
+           ["Make organ donation decision.", "community"],
            ["Get mammogram.", "cancer screening"],
-           ["Take hypertension medication once a day.","medication tracking"],
-           ["Take vitamin supplement once a day.","medication tracking"],
-           ["Keep below 1500 calories per day.","nutrition"],
-           ["Replace milk with almond milk.","nutrition"],
-           ["Increase heart rate by at least 30 minutes today.","exercise"],
-           ["Yoga stretches for 30 minutes a day.","exercise"],
-           ["Get eye sight checked.","annual checkup"],
-           ["Annual dental visit.","annual checkup"],
-           ["Get blood type checked.","baseline"],
-           ["Buy genetic testing kit from 23andme. ","baseline", "genetics"],
-           ["Fill out family history worksheet for diabetes risks.","risk factors"],
+           ["Take hypertension medication once a day.", "medication tracking"],
+           ["Take vitamin supplement once a day.", "medication tracking"],
+           ["Keep below 1500 calories per day.", "nutrition"],
+           ["Replace milk with almond milk.", "nutrition"],
+           ["Increase heart rate by at least 30 minutes today.", "exercise"],
+           ["Yoga stretches for 30 minutes a day.", "exercise"],
+           ["Get eye sight checked.", "annual checkup"],
+           ["Annual dental visit.", "annual checkup"],
+           ["Get blood type checked.", "baseline"],
+           ["Buy genetic testing kit from 23andme. ", "baseline", "genetics"],
+           ["Fill out family history worksheet for diabetes risks.", "risk factors"],
        ]
       }
     ];
@@ -47,13 +53,17 @@ Meteor.startup(function () {
 
     var timestamp = (new Date()).getTime();
     for (var i = 0; i < data.length; i++) {
-      var list_id = Lists.insert({name: data[i].name});
+      var list_id = Lists.insert({
+        name: data[i].name
+      });
       for (var j = 0; j < data[i].contents.length; j++) {
         var info = data[i].contents[j];
-        console.log(Todos.insert({list_id: list_id,
-                      text: info[0],
-                      timestamp: timestamp,
-                      tags: info.slice(1)}));
+        console.log(Todos.insert({
+          list_id: list_id,
+          text: info[0],
+          timestamp: timestamp,
+          tags: info.slice(1)
+        }));
         timestamp += 1; // ensure unique timestamp.
       }
     }
